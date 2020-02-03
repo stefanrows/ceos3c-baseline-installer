@@ -27,7 +27,7 @@ def addUser():
 # -
 
 # --------------
-# Changing Keyboard Layout to German
+# Changing Keyboard Layout
 # --------------
 
 
@@ -67,16 +67,21 @@ def installTools():
     print(Style.RESET_ALL)
     os.system(
         'sudo -u {} sudo apt install software-properties-common apt-transport-https wget -y'.format(user))
-    os.system('sudo -u {} wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -'.format(user))
+    os.system('sudo -u {} sudo wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -'.format(user))
     os.system(
         'sudo -u {} sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"'.format(user))
     os.system('sudo -u {} sudo apt update && sudo apt install code -y'.format(user))
 # -
+
+# --------------
+# Change Root Pwd
+# --------------
+# To Do
+# -
+
 # --------------
 # Cleaning Up
 # --------------
-
-# -
 
 
 def cleanup():
@@ -84,7 +89,7 @@ def cleanup():
     print(Style.RESET_ALL)
     os.system(
         'sudo -u {} sudo apt autoremove -y && sudo apt autoclean -y'.format(user))
-
+# -
 
 # --------------
 # Function Calls
