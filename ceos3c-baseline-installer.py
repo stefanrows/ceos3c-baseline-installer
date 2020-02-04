@@ -66,10 +66,12 @@ def installTools():
     print(Fore.GREEN + "### Installing Visual Studio Code ###")
     print(Style.RESET_ALL)
     os.system(
-        'sudo -u {} sudo apt install software-properties-common apt-transport-https wget -y'.format(user))
-    os.system('sudo -u {} sudo wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -'.format(user))
+        'sudo -u {} sudo apt install apt-transport-https -y'.format(user))
+    os.system('sudo -u {} curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg'.format(user))
     os.system(
-        'sudo -u {} sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"'.format(user))
+        'sudo -u {} sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/'.format(user))
+    os.system(
+        'sudo -u {} sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list''.format(user))
     os.system('sudo -u {} sudo apt update && sudo apt install code -y'.format(user))
 # -
 
