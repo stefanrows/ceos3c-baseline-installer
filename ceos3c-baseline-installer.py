@@ -83,9 +83,8 @@ def installTools():
 
 
 def installOptTools():
-    nordVPN = "n".lower()
-    nordVPN = input("Do you want to install NordVPN? y/N")
-    if nordVPN == "y".lower():
+    nordVPN = input("[x] Do you want to install NordVPN [x] (y/N): ")
+    if nordVPN.lower() == "y":
         print("We are installing it!")
     else:
         print("Not going to install it!")
@@ -115,10 +114,10 @@ def cleanup():
 # --------------
 
 
-addUser()
-changeKeyboardLayout()
-upgrade()
-installTools()
+# addUser()
+# changeKeyboardLayout()
+# upgrade()
+# installTools()
 installOptTools()
-cleanup()
+# cleanup()
 # -
