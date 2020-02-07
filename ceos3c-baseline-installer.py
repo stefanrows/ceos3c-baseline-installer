@@ -73,7 +73,24 @@ def installTools():
     os.system(
         'sudo -u {} sudo sh -c \'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list\''.format(user))
     os.system('sudo -u {} sudo apt update && sudo apt install code -y'.format(user))
+    print(Fore.GREEN + "### Installing NordVPN ###")
+    print(Style.RESET_ALL)
 # -
+
+# --------------
+# Installing Optional Tools
+# --------------
+
+
+def installOptTools():
+    nordVPN = "n".lower()
+    nordVPN = input("Do you want to install NordVPN? y/N")
+    if nordVPN == "y".lower():
+        print("We are installing it!")
+    else:
+        print("Not going to install it!")
+# -
+
 
 # --------------
 # Change Root Pwd
@@ -102,5 +119,6 @@ addUser()
 changeKeyboardLayout()
 upgrade()
 installTools()
+installOptTools()
 cleanup()
 # -
