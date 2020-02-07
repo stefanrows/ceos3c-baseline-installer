@@ -61,7 +61,7 @@ def installTools():
     print(Fore.GREEN + "### Installing Default Tools ###")
     print(Style.RESET_ALL)
     os.system(
-        'sudo -u {} sudo apt install nixnote2 nautilus-dropbox keepassxc python3-pip -y'.format(user))
+        'sudo -u {} sudo apt install nixnote2 nautilus-dropbox keepassxc python3-pip gobuster -y'.format(user))
     # VSCode
     print(Fore.GREEN + "### Installing Visual Studio Code ###")
     print(Style.RESET_ALL)
