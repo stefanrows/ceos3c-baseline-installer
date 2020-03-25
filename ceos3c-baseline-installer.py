@@ -37,7 +37,7 @@ def changeRootPwd():
     print(Fore.GREEN + "### Changing root default pwd ###")
     print(Style.RESET_ALL)
     os.system(
-        'sudo -u {} passwd root'.format(user))
+        'sudo -u {} sudo passwd root'.format(user))
 
 # -
 
@@ -135,7 +135,7 @@ def cleanup():
 
 
 addUser()
-# changeRootPwd()
+changeRootPwd()
 changeKeyboardLayout()
 upgrade()
 installTools()
