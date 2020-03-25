@@ -97,7 +97,9 @@ def installTools():
 
 
 def installOptTools():
-    nordVPN = input("[x] Do you want to install NordVPN [x] (y/N): ")
+    nordVPN = input(
+        Fore.GREEN + "[x] Do you want to install NordVPN [x] (y/N): ")
+    print(Style.RESET_ALL)
     if nordVPN.lower() == "y":
         print("We are installing it!")
         print(Fore.GREEN + "### Installing NordVPN ###")
@@ -109,7 +111,7 @@ def installOptTools():
         os.system(
             'sudo -u {} sudo apt update'.format(user))
         os.system(
-            'sudo -u {} sudo apt install nordvpn'.format(user))
+            'sudo -u {} sudo apt install nordvpn -y'.format(user))
     else:
         print("Not going to install NordVPN...Skipping...")
 # -
