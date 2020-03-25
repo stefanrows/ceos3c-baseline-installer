@@ -133,7 +133,7 @@ def cleanup():
 
 
 addUser()
-changeRootPwd()
+# changeRootPwd()
 changeKeyboardLayout()
 upgrade()
 installTools()
