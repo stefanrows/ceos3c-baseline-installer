@@ -105,7 +105,7 @@ def installOptTools():
         os.system(
             'sudo -u {} sudo wget -qnc https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb'.format(user))
         os.system(
-            'sudo -u {} sudo dpkg -i /pathToFile/nordvpn-release_1.0.0_all.deb'.format(user))
+            'sudo -u {} sudo dpkg -i nordvpn-release_1.0.0_all.deb'.format(user))
         os.system(
             'sudo -u {} sudo apt update'.format(user))
         os.system(
