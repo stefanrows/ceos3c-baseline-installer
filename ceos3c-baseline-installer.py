@@ -27,6 +27,21 @@ def addUser():
 # -
 
 # --------------
+# Change Root Pwd
+# --------------
+# To Do
+# -
+
+
+def changeRootPwd():
+    print(Fore.GREEN + "### Changing root default pwd ###")
+    print(Style.RESET_ALL)
+    os.system(
+        'sudo -u {} passwd root'.format(user))
+
+# -
+
+# --------------
 # Changing Keyboard Layout
 # --------------
 
@@ -101,12 +116,6 @@ def installOptTools():
 
 
 # --------------
-# Change Root Pwd
-# --------------
-# To Do
-# -
-
-# --------------
 # Cleaning Up
 # --------------
 
@@ -123,10 +132,11 @@ def cleanup():
 # --------------
 
 
-# addUser()
-# changeKeyboardLayout()
-# upgrade()
-# installTools()
+addUser()
+changeRootPwd()
+changeKeyboardLayout()
+upgrade()
+installTools()
 installOptTools()
-# cleanup()
+cleanup()
 # -
