@@ -61,7 +61,7 @@ def installTools():
     print(Fore.GREEN + "### Installing Default Tools ###")
     print(Style.RESET_ALL)
     os.system(
-        'sudo -u {} sudo apt install nixnote2 nautilus-dropbox keepassxc python3-pip gobuster -y'.format(user))
+        'sudo -u {} sudo apt install nixnote2 nautilus-dropbox keepassxc python3-pip -y'.format(user))
     # VSCode
     print(Fore.GREEN + "### Installing Visual Studio Code ###")
     print(Style.RESET_ALL)
@@ -73,8 +73,7 @@ def installTools():
     os.system(
         'sudo -u {} sudo sh -c \'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list\''.format(user))
     os.system('sudo -u {} sudo apt update && sudo apt install code -y'.format(user))
-    print(Fore.GREEN + "### Installing NordVPN ###")
-    print(Style.RESET_ALL)
+
 # -
 
 # --------------
@@ -86,8 +85,18 @@ def installOptTools():
     nordVPN = input("[x] Do you want to install NordVPN [x] (y/N): ")
     if nordVPN.lower() == "y":
         print("We are installing it!")
+        print(Fore.GREEN + "### Installing NordVPN ###")
+        print(Style.RESET_ALL)
+        os.system(
+            'sudo -u {} sudo wget -qnc https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb'.format(user))
+        os.system(
+            'sudo -u {} sudo dpkg -i /pathToFile/nordvpn-release_1.0.0_all.deb'.format(user))
+        os.system(
+            'sudo -u {} sudo apt update'.format(user))
+        os.system(
+            'sudo -u {} sudo apt install nordvpn'.format(user))
     else:
-        print("Not going to install it!")
+        print("Not going to install NordVPN...Skipping...")
 # -
 
 
