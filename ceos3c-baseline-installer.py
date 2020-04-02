@@ -77,6 +77,8 @@ def installTools():
     print(Style.RESET_ALL)
     os.system(
         'sudo -u {} sudo apt install nixnote2 nautilus-dropbox keepassxc python3-pip -y'.format(user))
+    os.system(
+        'sudo -u {} sudo git clone https://github.com/danielmiessler/SecLists.git /opt/'.format(user))
     # VSCode
     print(Fore.GREEN + "### Installing Visual Studio Code ###")
     print(Style.RESET_ALL)
